@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 14
-          registry-url: https://npmjs.com/
+          registry-url: https://registry.npmjs.org
           scope: "@neobeach"
 
       - name: Check if @neobeach/middlewares-old-browser version has been updated
@@ -24,7 +24,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish @neobeach/middlewares-old-browser
         if: steps.oldBrowser.outputs.changed == 'true'
-        run: npm publish old-browser
+        run: npm publish old-browser --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -37,6 +37,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish @neobeach/middlewares-request-logger
         if: steps.requestLogger.outputs.changed == 'true'
-        run: npm publish request-logger
+        run: npm publish request-logger --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
