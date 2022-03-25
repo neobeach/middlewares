@@ -4,7 +4,7 @@ name: Publish packages to NPM Package Registry
 on: [push]
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
