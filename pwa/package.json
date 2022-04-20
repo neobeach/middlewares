@@ -1,5 +1,5 @@
 {
-    "name": "@neobeach/middlewares-old-browser",
+    "name": "@neobeach/pwa",
     "version": "1.0.0",
     "description": "A middleware for the @neobeach/core package to serve a Manifest and Service Worker",
     "main": "index.js",
