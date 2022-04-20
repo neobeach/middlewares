@@ -17,7 +17,7 @@ const {Logger} = require('@neobeach/core');
  * @param {String} backgroundColor - Hex of the color that will be used as background color.
  * @param {String} version - Version to give back in service worker.
  * @param {Function|Boolean} customServiceWorker - Function to implement your own custom service worker.
- * @returns {function('*', '*', '*')}
+ * @return {function(*, *, *)}
  *
  * @example
  * const {Runtime, Server} = require('@neobeach/core');
