@@ -21,6 +21,24 @@ const expressGeoIp = require('express-geoip');
 */
 module.exports = (routing, defaultCountryCode, statusCode = 307, debug = false) => {
     return (req, res, next) => {
+        /**
+         * Check if routing is correct
+         */
+        if(typeof routing === "undefined" || typeof routing !== "object") {
+            Logger.error("[GEOIP] Routing object is not correct");
+            process.exit(1);
+            return;
+        }
+
+        /**
+         * Check if defaultCountryCode is correct
+         */
+        if (typeof defaultCountryCode === "undefined" || typeof defaultCountryCode !== "string" || defaultCountryCode === "") {
+            Logger.error("[GEOIP] defaultCountryCode is not correct");
+            process.exit(1);
+            return;
+        }
+
         // Check if ip is in request and check if ip address is know otherwise use default country code
         const countryCode = req.ip ? expressGeoIp('unknown').getCountryCode(req.ip) === "unknown" ? defaultCountryCode : expressGeoIp('unknown').getCountryCode(req.ip) : defaultCountryCode;
 
