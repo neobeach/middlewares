@@ -15,17 +15,17 @@ const expressGeoIp = require('express-geoip');
 *
 * @example
 * const globalMiddleware = [
-*    geoip({'nl': 'nl-NL'}, 'nl', 307, false)
+*    geoip({'nl': 'nl-NL'}, 'nl', 301, false)
 * ]
 *
 */
-module.exports = (routing, defaultCountryCode, statusCode , debug = false) => {
+module.exports = (routing, defaultCountryCode, statusCode = 307, debug = false) => {
     return (req, res, next) => {
         // Check if ip is in request and check if ip address is know otherwise use default country code
         const countryCode = req.ip ? expressGeoIp('unknown').getCountryCode(req.ip) === "unknown" ? defaultCountryCode : expressGeoIp('unknown').getCountryCode(req.ip) : defaultCountryCode;
 
         const urlWithoutParams = req.originalUrl.split("?")[0];
-        console.log(countryCode);
+
         if (urlWithoutParams === "/") {
             if (routing[countryCode.toLowerCase()]) {
                 if (debug) {
