@@ -18,7 +18,6 @@
  * @example
  * const {Runtime, Server} = require('@neobeach/core');
  * const robotsTxt = require('@neobeach/middlewares-robots-txt');
- * const Api = require('./routers/Api');
  *
  * const server = new Server();
  *

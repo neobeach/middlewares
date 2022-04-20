@@ -6,7 +6,23 @@ const {Logger} = require('@neobeach/core');
 /**
  * Log all incoming requests from Express
  *
- * @return {function(*, *, *): void}
+ * @access public
+ * @since 1.0.0
+ * @author Glenn de Haan
+ * @copyright MIT
+ *
+ * @return {function(*, *, *)}
+ *
+ * @example
+ * const {Runtime, Server} = require('@neobeach/core');
+ * const requestLogger = require('@neobeach/middlewares-request-logger');
+ *
+ * const server = new Server();
+ *
+ * Runtime(() => {
+ *    server.loadMiddlewares([requestLogger()]);
+ *    server.run();
+ * });
  */
 module.exports = () => {
     return (req, res, next) => {

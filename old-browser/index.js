@@ -7,9 +7,25 @@ const expressBrowserSupport = require('express-browsersupport');
 /**
  * Exports the Old Browser Middleware
  *
- * @param supported_browsers
- * @param debug
- * @return {function(*, *, *) | undefined}
+ * @access public
+ * @since 1.0.0
+ * @author Glenn de Haan
+ * @copyright MIT
+ *
+ * @param {array} supported_browsers - List of browsers and supported version numbers
+ * @param {boolean} debug - Enables/disables debug logs
+ * @return {function(*, *, *)}
+ *
+ * @example
+ * const {Runtime, Server} = require('@neobeach/core');
+ * const oldBrowser = require('@neobeach/middlewares-old-browser');
+ *
+ * const server = new Server();
+ *
+ * Runtime(() => {
+ *    server.loadMiddlewares([oldBrowser(['Chrome >= 41', 'Firefox >= 13', 'Safari >= 10', 'IE >= 99', 'Edge == All'], false)]);
+ *    server.run();
+ * });
  */
 module.exports = (supported_browsers = ['Chrome >= 41', 'Firefox >= 13', 'Safari >= 10', 'IE >= 99', 'Edge == All'], debug = false) => {
     /**

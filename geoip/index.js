@@ -21,15 +21,13 @@ const expressGeoIp = require('express-geoip');
  * @example
  * const {Runtime, Server} = require('@neobeach/core');
  * const geoip = require('@neobeach/middlewares-geoip');
- * const Api = require('./routers/Api');
  *
  * const server = new Server();
  *
  * Runtime(() => {
  *      server.loadMiddlewares([geoip({'nl': 'nl-NL'}, 'nl', 301, false)]);
  *      server.run();
- * })
- *
+ * });
  */
 module.exports = (routing, defaultCountryCode, statusCode = 307, debug = false) => {
     return (req, res, next) => {

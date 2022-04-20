@@ -15,6 +15,19 @@ jobs:
           registry-url: https://registry.npmjs.org
           scope: "@neobeach"
 
+      - name: Check if @neobeach/middlewares-geoip version has been updated
+        id: geoIp
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: geoip/package.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish @neobeach/middlewares-geoip
+        if: steps.geoIp.outputs.changed == 'true'
+        run: npm publish geoip --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Check if @neobeach/middlewares-old-browser version has been updated
         id: oldBrowser
         uses: EndBug/version-check@v1
@@ -28,6 +41,19 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Check if @neobeach/middlewares-pwa version has been updated
+        id: pwa
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: pwa/package.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish @neobeach/middlewares-pwa
+        if: steps.pwa.outputs.changed == 'true'
+        run: npm publish pwa --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Check if @neobeach/middlewares-request-logger version has been updated
         id: requestLogger
         uses: EndBug/version-check@v1
@@ -38,5 +64,18 @@ jobs:
       - name: Publish @neobeach/middlewares-request-logger
         if: steps.requestLogger.outputs.changed == 'true'
         run: npm publish request-logger --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Check if @neobeach/middlewares-robots-txt version has been updated
+        id: robotsTxt
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: robots-txt/package.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish @neobeach/middlewares-robots-txt
+        if: steps.robotsTxt.outputs.changed == 'true'
+        run: npm publish robots-txt --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
