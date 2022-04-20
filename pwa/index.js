@@ -22,16 +22,14 @@ const {Logger} = require('@neobeach/core');
  * const {Runtime, Server} = require('@neobeach/core');
  * const pwa = require('@neobeach/middlewares-pwa');
  * const Api = require('./routers/Api');
- * 
+ *
  * const server = new Server();
- * 
+ *
  * Runtime(() => {
  *      server.loadMiddlewares([pwa('DPDK Project', 'Project', '#000000', '#000000', '1.0.0')]);
  *      server.run();
  * })
- * 
- * const {Runtime, Server} = require('@neobeach/core');
- * 
+ *
  */
 module.exports = (name, shortName, themeColor, backgroundColor, version, customServiceWorker = false) => {
     return (req, res, next) => {
