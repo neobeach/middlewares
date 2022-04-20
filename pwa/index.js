@@ -1,6 +1,6 @@
 /**
  * Import vendor modules
-*/
+ */
 const {Logger} = require('@neobeach/core');
 
 /**
@@ -17,18 +17,27 @@ const {Logger} = require('@neobeach/core');
  * @param {String} backgroundColor - Hex of the color that will be used as background color.
  * @param {String} version - Version to give back in service worker.
  * @param {Function|Boolean} customServiceWorker - Function to implement your own custom service worker.
- * @returns {function(*)}
  *
  * @example
- * const globalMiddleware = [
- *     pwa('DPDK Project', 'Project', '#000000', '#000000', '1.0.0')
- * ];
+ * const {Runtime, Server} = require('@neobeach/core');
+ * const pwa = require('@neobeach/middlewares-pwa');
+ * const Api = require('./routers/Api');
+ * 
+ * const server = new Server();
+ * 
+ * Runtime(() => {
+ *      server.loadMiddlewares([pwa('DPDK Project', 'Project', '#000000', '#000000', '1.0.0')]);
+ *      server.run();
+ * })
+ * 
+ * const {Runtime, Server} = require('@neobeach/core');
+ * 
  */
 module.exports = (name, shortName, themeColor, backgroundColor, version, customServiceWorker = false) => {
     return (req, res, next) => {
         /**
          * Check if name is correct
-        */
+         */
         if(typeof name === "undefined" || typeof name !== "string" || name === "") {
             Logger.error("[PWA] name is not correct");
             process.exit(1);
@@ -37,7 +46,7 @@ module.exports = (name, shortName, themeColor, backgroundColor, version, customS
 
         /**
          * Check if shortName is correct
-        */
+         */
         if(typeof shortName === "undefined" || typeof shortName !== "string" || shortName === "") {
             Logger.error("[PWA] shortName is not correct");
             process.exit(1);
@@ -46,8 +55,8 @@ module.exports = (name, shortName, themeColor, backgroundColor, version, customS
 
         /**
          * Check if themeColor is correct
-        */
-        if(typeof themeColor === "undefined" || typeof shortName !== "string" || shortName === "") {
+         */
+        if(typeof themeColor === "undefined" || typeof themeColor !== "string" || themeColor === "") {
             Logger.error("[PWA] themeColor is not correct");
             process.exit(1);
             return;
@@ -55,7 +64,7 @@ module.exports = (name, shortName, themeColor, backgroundColor, version, customS
 
         /**
          * Check if backgroundColor is correct
-        */
+         */
         if(typeof backgroundColor === "undefined" || typeof backgroundColor !== "string" || backgroundColor === "") {
             Logger.error("[PWA] backgroundColor is not correct");
             process.exit(1);
@@ -64,7 +73,7 @@ module.exports = (name, shortName, themeColor, backgroundColor, version, customS
 
         /**
          * Check if version is correct
-        */
+         */
         if(typeof version === "undefined" || typeof version !== "string" || version === "") {
             Logger.error("[PWA] version is not correct");
             process.exit(1);
