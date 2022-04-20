@@ -16,20 +16,20 @@ const expressGeoIp = require('express-geoip');
  * @param {String} defaultCountryCode - When req.ip is not found or recognized use this country code.
  * @param {Number} statusCode - The status code to use on the redirect.
  * @param {Boolean} debug - Boolean to have extra logging for debugging.
- * @return {function(*, *)}
- * 
+ * @return {function(*, *, *)}
+ *
  * @example
  * const {Runtime, Server} = require('@neobeach/core');
  * const geoip = require('@neobeach/middlewares-geoip');
  * const Api = require('./routers/Api');
- * 
+ *
  * const server = new Server();
- * 
+ *
  * Runtime(() => {
  *      server.loadMiddlewares([geoip({'nl': 'nl-NL'}, 'nl', 301, false)]);
  *      server.run();
  * })
- * 
+ *
  */
 module.exports = (routing, defaultCountryCode, statusCode = 307, debug = false) => {
     return (req, res, next) => {
