@@ -1,5 +1,5 @@
 {
-  "name": "@neobeach/middlewares-geo-ip",
+  "name": "@neobeach/middlewares-geoip",
   "version": "1.0.0",
   "description": "A middleware for the @neobeach/core package that redirects based on the geoip",
   "main": "index.js",
