@@ -13,7 +13,7 @@
  *
  * @param {Boolean} disallowAll - Boolean to allow or disallow all from indexing the site
  * @param {Array} extraDisallowRules - Array to add project based routes to disallow list
- * @returns {function('*', '*', '*')}
+ * @return {function(*, *, *)}
  *
  * @example
  * const {Runtime, Server} = require('@neobeach/core');
