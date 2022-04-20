@@ -6,13 +6,18 @@ const {Logger} = require('@neobeach/core');
 /**
  * Middleware to serve Manifest and Service Worker.
  *
- * @param {String} name
- * @param {String} shortName
- * @param {String} themeColor
- * @param {String} backgroundColor
- * @param {String} version
- * @param {Function|Boolean} customServiceWorker
- * @returns {Function}
+ * @access public
+ * @since 1.0.0
+ * @author Glenn de Haan
+ * @copyright MIT
+ *
+ * @param {String} name - Completed full name of the application. (maximum of 45 characters)
+ * @param {String} shortName - Name to display when name is too long. (maximum of 12 characters recommended)
+ * @param {String} themeColor - Hex of the color that will be used as theme.
+ * @param {String} backgroundColor - Hex of the color that will be used as background color.
+ * @param {String} version - Version to give back in service worker.
+ * @param {Function|Boolean} customServiceWorker - Function to implement your own custom service worker.
+ * @returns {function(*)}
  *
  * @example
  * const globalMiddleware = [
