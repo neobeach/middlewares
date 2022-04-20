@@ -5,20 +5,32 @@ const {Logger} = require('@neobeach/core');
 const expressGeoIp = require('express-geoip');
 
 /**
-* Checks if we should redirect based on GEO-IP
-*
-* @param {Object} routing
-* @param {String} defaultCountryCode
-* @param {Number} statusCode
-* @param {Boolean} debug
-* @return {Function}
-*
-* @example
-* const globalMiddleware = [
-*    geoip({'nl': 'nl-NL'}, 'nl', 301, false)
-* ]
-*
-*/
+ * Checks if we should redirect based on GEO-IP
+ *
+ * @access public
+ * @since 1.0.0
+ * @author Glenn de Haan
+ * @copyright MIT
+ *
+ * @param {Object} routing - Object with blueprint of projects routing.
+ * @param {String} defaultCountryCode - When req.ip is not found or recognized use this country code.
+ * @param {Number} statusCode - The status code to use on the redirect.
+ * @param {Boolean} debug - Boolean to have extra logging for debugging.
+ * @return {function(*, *, *)}
+ *
+ * @example
+ * const {Runtime, Server} = require('@neobeach/core');
+ * const geoip = require('@neobeach/middlewares-geoip');
+ * const Api = require('./routers/Api');
+ *
+ * const server = new Server();
+ *
+ * Runtime(() => {
+ *      server.loadMiddlewares([geoip({'nl': 'nl-NL'}, 'nl', 301, false)]);
+ *      server.run();
+ * })
+ *
+ */
 module.exports = (routing, defaultCountryCode, statusCode = 307, debug = false) => {
     return (req, res, next) => {
         /**
