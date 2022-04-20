@@ -13,24 +13,31 @@
  *
  * @param {Boolean} disallowAll - Boolean to allow or disallow all from indexing the site
  * @param {Array} extraDisallowRules - Array to add project based routes to disallow list
- * @returns {function(*, *, *)}
+ * @returns {function('*', '*', '*')}
  *
  * @example
- * const globalMiddleware = [
- *    robotsTxt(true, [])
- * ]
-*/
+ * const {Runtime, Server} = require('@neobeach/core');
+ * const robotsTxt = require('@neobeach/middlewares-robots-txt');
+ * const Api = require('./routers/Api');
+ *
+ * const server = new Server();
+ *
+ * Runtime(() => {
+ *    server.loadMiddlewares([robotsTxt(true, [])]);
+ *    server.run();
+ * });
+ */
 module.exports = (disallowAll = false, extraDisallowRules = []) => {
     /**
      * Check if disallowAll is correct
-    */
+     */
     if(typeof disallowAll === "undefined" || typeof disallowAll !== "boolean") {
         Logger.error("[ROBOTS.TXT] disallowAll is not correct");
     }
 
     /**
      * Check if extraDisallowRules is correct
-    */
+     */
     if(typeof extraDisallowRules === "undefined" || !Array.isArray(extraDisallowRules)){
         Logger.error("[ROBOTS.TXT] extraDisallowRules is not correct");
     }
