@@ -13,8 +13,8 @@ const expressBrowserSupport = require('express-browsersupport');
  * @author Glenn de Haan
  * @copyright MIT
  *
- * @param {array} supported_browsers - List of browsers and supported version numbers
- * @param {boolean} debug - Enables/disables debug logs
+ * @param {array} [supportedBrowsers] - List of browsers and supported version numbers
+ * @param {boolean} [debug] - Enables/disables debug logs
  * @return {function(*, *, *)}
  *
  * @example
@@ -28,11 +28,11 @@ const expressBrowserSupport = require('express-browsersupport');
  *    server.run();
  * });
  */
-module.exports = (supported_browsers = ['Chrome >= 41', 'Firefox >= 13', 'Safari >= 10', 'IE >= 99', 'Edge == All'], debug = false) => {
+module.exports = (supportedBrowsers = ['Chrome >= 41', 'Firefox >= 13', 'Safari >= 10', 'IE >= 99', 'Edge == All'], debug = false) => {
     /**
      * Check if supported browsers are correct
      */
-    if (typeof supported_browsers === 'undefined' || !Array.isArray(supported_browsers)) {
+    if (typeof supportedBrowsers === 'undefined' || !Array.isArray(supportedBrowsers)) {
         Logger.error("[OLD BROWSER] Option 'supported_browsers' must be an Array");
         process.exit(1);
         return;
@@ -53,6 +53,6 @@ module.exports = (supported_browsers = ['Chrome >= 41', 'Firefox >= 13', 'Safari
     return expressBrowserSupport({
         customResponse: require('./page'),
         debug: debug,
-        supportedBrowsers: supported_browsers
+        supportedBrowsers: supportedBrowsers
     });
 };

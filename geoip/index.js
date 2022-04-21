@@ -15,8 +15,8 @@ const expressGeoIp = require('express-geoip');
  *
  * @param {Object} routing - Object with blueprint of projects routing.
  * @param {String} defaultCountryCode - When req.ip is not found or recognized use this country code.
- * @param {Number} statusCode - The status code to use on the redirect.
- * @param {Boolean} debug - Boolean to have extra logging for debugging.
+ * @param {Number} [statusCode] - The status code to use on the redirect.
+ * @param {Boolean} [debug] - Boolean to have extra logging for debugging.
  * @return {function(*, *, *)}
  *
  * @example

@@ -1,7 +1,7 @@
 /**
  * Import modules
  */
- const {Logger} = require('@neobeach/core');
+const {Logger} = require('@neobeach/core');
 
 /**
  * Set up a robots.txt
@@ -12,8 +12,8 @@
  * @author Glenn de Haan
  * @copyright MIT
  *
- * @param {Boolean} disallowAll - Boolean to allow or disallow all from indexing the site
- * @param {Array} extraDisallowRules - Array to add project based routes to disallow list
+ * @param {Boolean} [disallowAll] - Boolean to allow or disallow all from indexing the site
+ * @param {Array} [extraDisallowRules] - Array to add project based routes to disallow list
  * @return {function(*, *, *)}
  *
  * @example

@@ -1,6 +1,6 @@
 {
   "name": "@neobeach/middlewares-robots-txt",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A middleware for the @neobeach/core to serve a robots.txt file.",
   "main": "index.js",
   "author": "Glenn de Haan <glenn@dehaan.cloud>",

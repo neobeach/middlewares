@@ -17,7 +17,7 @@ const {Logger} = require('@neobeach/core');
  * @param {String} themeColor - Hex of the color that will be used as theme.
  * @param {String} backgroundColor - Hex of the color that will be used as background color.
  * @param {String} version - Version to give back in service worker.
- * @param {Function|Boolean} customServiceWorker - Function to implement your own custom service worker.
+ * @param {Function|Boolean} [customServiceWorker] - Function to implement your own custom service worker.
  * @return {function(*, *, *)}
  *
  * @example
