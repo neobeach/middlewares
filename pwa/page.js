@@ -1,5 +1,6 @@
 /**
  * Basic page to show we are offline
+ * @ignore
  */
 module.exports = `
 <html lang="en">
@@ -59,4 +60,4 @@ module.exports = `
         document.querySelector('.link').textContent = window.location.href;
     </script>
     </body>
-</html>`
+</html>`;

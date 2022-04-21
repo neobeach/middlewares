@@ -6,6 +6,7 @@ const {Logger} = require('@neobeach/core');
 /**
  * Middleware to serve Manifest and Service Worker.
  *
+ * @module @neobeach/middlewares-pwa
  * @access public
  * @since 1.0.0
  * @author Glenn de Haan

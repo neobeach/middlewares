@@ -7,6 +7,7 @@ const expressGeoIp = require('express-geoip');
 /**
  * Checks if we should redirect based on GEO-IP
  *
+ * @module @neobeach/middlewares-geoip
  * @access public
  * @since 1.0.0
  * @author Glenn de Haan

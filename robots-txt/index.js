@@ -6,6 +6,7 @@
 /**
  * Set up a robots.txt
  *
+ * @module @neobeach/middlewares-robots-txt
  * @access public
  * @since 1.0.0
  * @author Glenn de Haan

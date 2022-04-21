@@ -5,8 +5,9 @@ const {Logger} = require('@neobeach/core');
 const expressBrowserSupport = require('express-browsersupport');
 
 /**
- * Exports the Old Browser Middleware
+ * Middleware to redirect 'Old Browsers' to an alternative page
  *
+ * @module @neobeach/middlewares-old-browser
  * @access public
  * @since 1.0.0
  * @author Glenn de Haan

@@ -6,6 +6,7 @@ const {Logger} = require('@neobeach/core');
 /**
  * Log all incoming requests from Express
  *
+ * @module @neobeach/middlewares-request-logger
  * @access public
  * @since 1.0.0
  * @author Glenn de Haan

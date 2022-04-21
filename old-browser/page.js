@@ -2,6 +2,7 @@
  * Returns the CSS for the page
  *
  * @type {string}
+ * @ignore
  */
 const style = `
     .container {
@@ -12,64 +13,64 @@ const style = `
         margin: 0 auto;
         font-family: "metric semi-bold", verdana, sans-serif;
     }
-    
+
     .container.padded {
         padding: 0 20px;
     }
-    
+
     .container {
         padding-top: 30px;
         padding-bottom: 80px;
         position: relative;
         z-index: 10;
     }
-    
+
     @media screen and (min-width: 900px) {
         .container {
             padding-top: 80px;
             padding-bottom: 80px;
         }
     }
-    
+
     .title {
         margin-bottom: 20px;
     }
-    
+
     @media screen and (min-width: 900px) {
         .title {
             margin-bottom: 25px;
         }
     }
-    
+
     .subtitle {
         margin: auto;
         max-width: 680px;
     }
-    
+
     .grid-container {
         margin-top: 20px;
     }
-    
+
     .grid {
         text-align: center;
         margin-top: 10px;
     }
-    
+
     .grid .wrapper {
         display: inline-block;
         padding: 5px;
     }
-    
+
     .grid.browsers .wrapper {
         padding: 10px;
     }
-    
+
     .grid .browser {
         text-align: center;
         text-decoration: none;
         color: #232323;
     }
-    
+
     .grid .browser .icon {
         display: block;
         margin: auto;
@@ -77,17 +78,17 @@ const style = `
         width: 100px;
         height: 100px;
     }
-    
+
     .grid .browser .browser-title {
         font-size: 14px;
         border-bottom: 1px solid transparent;
         transition: border 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .grid .browser:hover .browser-title {
         border-color: #232323;
     }
-    
+
     .footer {
         position: fixed;
         bottom: 0;
@@ -99,14 +100,14 @@ const style = `
         text-align: center;
         z-index: 100;
     }
-    
+
     @media screen and (max-width: 599px) {
         .footer {
             font-size: 12px;
             padding: 17px 50px;
         }
     }
-    
+
     .footer span,
     .footer a {
         -webkit-font-smoothing: antialiased;
@@ -115,16 +116,16 @@ const style = `
         padding: 5px 0;
         border-bottom: 1px solid transparent;
     }
-    
+
     .footer a {
         text-decoration: none;
         transition: border 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .footer a:hover {
         border-color: #fff;
     }
-    
+
     .button {
         position: relative;
         display: inline-block;
@@ -139,26 +140,26 @@ const style = `
         text-align: center;
         z-index: 1;
     }
-    
+
     @media screen and (min-width: 900px) {
         .button {
             padding: 13px 40px;
         }
     }
-    
+
     .button:hover {
         color: #fff;
     }
-    
+
     .button:hover:before {
         background-color: #262626;
     }
-    
+
     .button span {
         position: relative;
         z-index: 2;
     }
-    
+
     .button:before {
         content: "";
         position: absolute;
@@ -170,171 +171,171 @@ const style = `
         border: 3px solid transparent;
         z-index: 1;
     }
-    
+
     .button-dark {
         color: #262626;
     }
-    
+
     .button-dark:before {
         border-color: #262626;
     }
-    
+
     .button-light {
         color: #fff;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    
+
     .button-light:before {
         border-color: #fff;
     }
-    
+
     .button-light:hover {
         color: #262626;
     }
-    
+
     .button-light:hover:before {
         background-color: #fff;
     }
-    
+
     .device-desktop .button:hover:before {
         -webkit-transform: scale(1.05);
         transform: scale(1.05);
     }
-    
+
     .device-desktop .button:active:before {
         -webkit-transform: scale(0.95);
         transform: scale(0.95);
     }
-    
+
     .heading {
         position: relative;
     }
-    
+
     .heading-primary {
         font-family: "metric semi-bold", verdana, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    
+
     .heading-secondary {
         font-family: "metric semi-bold", verdana, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    
+
     .heading-bold-main {
         font-family: "metric semi-bold", verdana, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    
+
     .heading-h1 {
         margin-bottom: 15px;
         font-size: 26px;
         line-height: 30px;
     }
-    
+
     @media screen and (min-width: 900px) {
         .heading-h1 {
             font-size: 50px;
             line-height: 56px;
         }
     }
-    
+
     .heading-h2 {
         font-size: 22px;
         line-height: 29px;
     }
-    
+
     @media screen and (min-width: 900px) {
         .heading-h2 {
             font-size: 35px;
             line-height: 35px;
         }
     }
-    
+
     .heading-h3 {
         font-size: 22px;
         line-height: 29px;
     }
-    
+
     .heading-h4 {
         font-size: 18px;
         line-height: 20px;
     }
-    
+
     @media screen and (min-width: 900px) {
         .heading-h4 {
             font-size: 18px;
             line-height: 20px;
         }
     }
-    
+
     .heading-h5 {
         font-size: 1.8rem;
     }
-    
+
     @media screen and (min-width: 900px) {
         .heading-h5 {
             font-size: 2.2rem;
         }
     }
-    
+
     @media screen and (min-width: 1600px) {
         .heading-h5 {
             font-size: 2.6rem;
         }
     }
-    
+
     .heading-h6 {
         font-size: 2.2rem;
     }
-    
+
     .heading-h7 {
         font-size: 2rem;
     }
-    
+
     .heading-h8 {
         font-size: 1.4rem;
     }
-    
+
     @media screen and (min-width: 1400px) {
         .heading-h8 {
             font-size: 1.6rem;
         }
     }
-    
+
     .heading-base {
         font-size: 14px;
         line-height: 21px;
     }
-    
+
     @media screen and (min-width: 600px) {
         .heading-base {
             font-size: 16px;
             line-height: 25px;
         }
     }
-    
+
     .heading-black {
         color: #262626;
     }
-    
+
     .heading-white {
         color: #fff;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    
+
     .heading-left {
         text-align: left;
     }
-    
+
     .heading-center {
         text-align: center;
     }
-    
+
     .heading-right {
         text-align: right;
     }
@@ -348,6 +349,7 @@ const safari = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eN
  * Export old browser HTML
  *
  * @type {string}
+ * @ignore
  */
 module.exports = `
   <!DOCTYPE html>
