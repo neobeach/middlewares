@@ -40,7 +40,6 @@ Runtime(() => {
 
 ```
 
-
 ## Create middlewares yourself
 If you have a middleware that you want to include look at the other middlewares as a template.
 When you are done with them, and they are tested create a pull request in @neobeach/middlewares.
