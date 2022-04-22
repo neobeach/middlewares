@@ -1,6 +1,6 @@
 # neobeach/middlewares
 
-Mono repo containing middleware implementation based on @neabeach/core.
+Repository containing middlewares implementations based on the @neabeach/core.
 
 ## What are middlewares
 Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle.
@@ -8,7 +8,7 @@ The middleware functions will be performed on every request made to the applicat
 
 ## How to implement middlewares in neobeach
 To implement middlewares you have to first require them in the `server.js` file. After this you have to load them in via `server.loadMiddlewares` functions inside `Runtime`.
-Inside `Runtime` you can decide the order the middlewares are loaded in. You can also just collect them all inside an array and load them all in at once.
+You can collect the middleware functions together in one array and load them all at once.
 
 Example from the `server.js`file.
 ```javascript
@@ -24,9 +24,9 @@ const server = new Server();
  */
 const globalMiddleware = [
     requestLogger(),
-    oldBrowser()
+    oldBrowser(),
+    pwa()
 ];
-
 
 /**
  * Create a runtime/sandbox to start the server in
@@ -35,7 +35,6 @@ Runtime(() => {
     server.includeDefaultBodyParsers();
     server.loadMiddlewares(globalMiddleware);
     server.loadRouters(routers);
-    server.loadMiddlewares(pwa);
     server.run();
 });
 
