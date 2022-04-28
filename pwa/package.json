@@ -1,22 +1,23 @@
 {
-    "name": "@neobeach/middlewares-pwa",
-    "version": "1.0.3",
-    "description": "A middleware for the @neobeach/core package to serve a Manifest and Service Worker",
-    "main": "index.js",
-    "author": "Glenn de Haan <glenn@dehaan.cloud>",
-    "contributors": [
-        "Colin van Eenige <cvaneenige@gmail.com>",
-        "Roel Voordendag <rvoordendag@gmail.com>"
-    ],
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/neobeach/middlewares.git"
-    },
-    "engines": {
-        "node": ">=14.0.0"
-    },
-    "dependencies": {
-        "@neobeach/core": "*"
-    }
+  "name": "@neobeach/middlewares-pwa",
+  "version": "1.0.4",
+  "description": "A middleware for the @neobeach/core package to serve a Manifest and Service Worker",
+  "main": "index.js",
+  "author": "Glenn de Haan <glenn@dehaan.cloud>",
+  "contributors": [
+    "Colin van Eenige <cvaneenige@gmail.com>",
+    "Roel Voordendag <rvoordendag@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neobeach/middlewares.git"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@neobeach/core": "*"
   }
+}
