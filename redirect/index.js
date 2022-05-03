@@ -30,6 +30,8 @@ const {Logger} = require('@neobeach/core');
  * });
  */
 module.exports = (redirects = {}, status = 307) => {
+    Logger.info(`[REDIRECT] Enabled! Redirect Status Code: ${status}`);
+
     /**
      * Define statics
      */

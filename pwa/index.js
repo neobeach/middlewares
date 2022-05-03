@@ -32,6 +32,10 @@ const {Logger} = require('@neobeach/core');
  * });
  */
 module.exports = (name, shortName, themeColor, backgroundColor, version, customServiceWorker = false) => {
+    Logger.info(`[PWA] Enabled! App Name: ${name}, App Short Name: ${shortName}, Theme Color: ${themeColor}, Background Color: ${backgroundColor}`);
+    Logger.info(`[PWA] Exposed: /manifest.json`);
+    Logger.info(`[PWA] Exposed: /sw.js`);
+
     return (req, res, next) => {
         /**
          * Check if name is correct
