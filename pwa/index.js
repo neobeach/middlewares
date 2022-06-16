@@ -28,7 +28,7 @@ const {Logger} = require('@neobeach/core');
  * const server = new Server();
  *
  * Runtime(() => {
- *      server.loadMiddlewares([pwa('DPDK Project', 'Project', '#000000', '#000000', '1.0.0')]);
+ *      server.loadMiddlewares([pwa('Full Project', 'Project', "Description of Project",'#000000', '#000000', '1.0.0')]);
  *      server.run();
  * });
  */
