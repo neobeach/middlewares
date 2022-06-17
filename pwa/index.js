@@ -14,6 +14,7 @@ const {Logger} = require('@neobeach/core');
  *
  * @param {String} name - Completed full name of the application. (maximum of 45 characters)
  * @param {String} shortName - Name to display when name is too long. (maximum of 12 characters recommended)
+ * @param {String} description - Description of the application
  * @param {String} themeColor - Hex of the color that will be used as theme.
  * @param {String} backgroundColor - Hex of the color that will be used as background color.
  * @param {String} version - Version to give back in service worker.
@@ -27,14 +28,14 @@ const {Logger} = require('@neobeach/core');
  * const server = new Server();
  *
  * Runtime(() => {
- *      server.loadMiddlewares([pwa('DPDK Project', 'Project', '#000000', '#000000', '1.0.0')]);
+ *      server.loadMiddlewares([pwa('Full Project', 'Project', "Description of Project",'#000000', '#000000', '1.0.0')]);
  *      server.run();
  * });
  */
-module.exports = (name, shortName, themeColor, backgroundColor, version, customServiceWorker = false) => {
+module.exports = (name, shortName, description, themeColor, backgroundColor, version, customServiceWorker = false) => {
     Logger.info(`[PWA] Enabled! App Name: ${name}, App Short Name: ${shortName}, Theme Color: ${themeColor}, Background Color: ${backgroundColor}`);
     Logger.info(`[PWA] Exposed: /manifest.json`);
-    Logger.info(`[PWA] Exposed: /sw.js`);
+    Logger.info(`[PWA] Exposed: /sw.js`)
 
     return (req, res, next) => {
         /**
@@ -51,6 +52,15 @@ module.exports = (name, shortName, themeColor, backgroundColor, version, customS
          */
         if(typeof shortName === "undefined" || typeof shortName !== "string" || shortName === "") {
             Logger.error("[PWA] shortName is not correct");
+            process.exit(1);
+            return;
+        }
+
+        /**
+         * Check if description is correct
+         */
+        if(typeof description === "undefined" || typeof description !== "string" || description === "") {
+            Logger.error("[PWA] description is not correct")
             process.exit(1);
             return;
         }
@@ -86,6 +96,7 @@ module.exports = (name, shortName, themeColor, backgroundColor, version, customS
             const manifest = {
                 short_name: shortName,
                 name: name,
+                description: description,
                 icons: [
                     {
                         src: "/images/icons-192.png",
