@@ -1,6 +1,6 @@
 {
   "name": "@neobeach/middlewares-old-browser",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A middleware for the @neobeach/core package that allows you to send outdated browsers to a default 'Old Browser' page",
   "main": "index.js",
   "author": "Glenn de Haan <glenn@dehaan.cloud>",
@@ -12,8 +12,9 @@
     "type": "git",
     "url": "https://github.com/neobeach/middlewares.git"
   },
+  "sideEffects": false,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "@neobeach/core": "*",

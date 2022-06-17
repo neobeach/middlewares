@@ -165,6 +165,7 @@ module.exports = (name, shortName, description, themeColor, backgroundColor, ver
                     }
                 });`
             );
+            return;
         }
 
         next();

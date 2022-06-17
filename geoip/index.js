@@ -31,6 +31,8 @@ const expressGeoIp = require('express-geoip');
  * });
  */
 module.exports = (routing, defaultCountryCode, statusCode = 307, debug = false) => {
+    Logger.info(`[GEOIP] Enabled! Routing: ${JSON.stringify(routing)}, Default Country Code: ${defaultCountryCode}, Redirect Status Code: ${statusCode}`);
+
     return (req, res, next) => {
         /**
          * Check if routing is correct

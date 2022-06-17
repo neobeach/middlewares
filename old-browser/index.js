@@ -29,6 +29,8 @@ const expressBrowserSupport = require('express-browsersupport');
  * });
  */
 module.exports = (supportedBrowsers = ['Chrome >= 41', 'Firefox >= 13', 'Safari >= 10', 'IE >= 99', 'Edge == All'], debug = false) => {
+    Logger.info(`[OLD BROWSER] Enabled! Supported Browser Rules: ${supportedBrowsers.join(', ')}`);
+
     /**
      * Check if supported browsers are correct
      */

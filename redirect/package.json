@@ -1,6 +1,6 @@
 {
   "name": "@neobeach/middlewares-redirect",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A middleware for the @neobeach/core package that allows you to redirect urls",
   "main": "index.js",
   "author": "Glenn de Haan <glenn@dehaan.cloud>",
@@ -12,8 +12,9 @@
     "type": "git",
     "url": "https://github.com/neobeach/middlewares.git"
   },
+  "sideEffects": false,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "@neobeach/core": "*"

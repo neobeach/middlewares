@@ -28,6 +28,9 @@ const {Logger} = require('@neobeach/core');
  * });
  */
 module.exports = (disallowAll = false, extraDisallowRules = []) => {
+    Logger.info(`[ROBOTS.TXT] Enabled! Disallow All: ${disallowAll ? 'Enabled' : 'Disabled'}, Extra Disallow Rules: ${JSON.stringify(extraDisallowRules)}`);
+    Logger.info(`[ROBOTS.TXT] Exposed: /robots.txt`);
+
     /**
      * Check if disallowAll is correct
      */
