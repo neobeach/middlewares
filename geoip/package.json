@@ -1,6 +1,6 @@
 {
   "name": "@neobeach/middlewares-geoip",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "A middleware for the @neobeach/core package that redirects based on the geoip",
   "main": "index.js",
   "author": "Glenn de Haan <glenn@dehaan.cloud>",
@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "@neobeach/core": "*",
-    "express-geoip": "^2.4.0"
+    "express-geoip": "2.4.0"
   }
 }
